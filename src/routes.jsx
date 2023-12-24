@@ -2,12 +2,9 @@ import {
   HomeIcon,
   UserCircleIcon,
   TableCellsIcon,
-  InformationCircleIcon,
-  ServerStackIcon,
-  RectangleStackIcon,
 } from "@heroicons/react/24/solid";
-import { Home, Profile, Tables, Notifications } from "@/pages/dashboard";
-import { SignIn, SignUp } from "@/pages/auth";
+import { Home,Farmers,Groups,Fieldofficers,Reports } from "@/pages/dashboard";
+import { SignIn, SignUp,ChangePassword } from "@/pages/auth";
 
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -15,6 +12,7 @@ const icon = {
 
 export const routes = [
   {
+    title: "Main Menu",
     layout: "dashboard",
     pages: [
       {
@@ -25,42 +23,48 @@ export const routes = [
       },
       {
         icon: <UserCircleIcon {...icon} />,
-        name: "profile",
-        path: "/profile",
-        element: <Profile />,
+        name: "fieldofficer",
+        path: "/fieldofficers",
+        element: <Fieldofficers />,
       },
       {
         icon: <TableCellsIcon {...icon} />,
-        name: "tables",
-        path: "/tables",
-        element: <Tables />,
+        name: "reports",
+        path: "/reports",
+        element: <Reports />,
       },
       {
-        icon: <InformationCircleIcon {...icon} />,
-        name: "notifications",
-        path: "/notifications",
-        element: <Notifications />,
+        icon: <TableCellsIcon {...icon} />,
+        name: "farmers",
+        path: "/farmers",
+        element: <Farmers />,
+      },
+      {
+        icon: <UserCircleIcon {...icon} />,
+        name: "groups",
+        path: "/groups",
+        element: <Groups />,
       },
     ],
   },
-  {
-    title: "auth pages",
-    layout: "auth",
-    pages: [
-      {
-        icon: <ServerStackIcon {...icon} />,
-        name: "sign in",
-        path: "/sign-in",
-        element: <SignIn />,
-      },
-      {
-        icon: <RectangleStackIcon {...icon} />,
-        name: "sign up",
-        path: "/sign-up",
-        element: <SignUp />,
-      },
-    ],
-  },
+  // {
+  //   title: "auth pages",
+  //   layout: "auth",
+  //   pages: [
+  //     {
+  //       icon: <ServerStackIcon {...icon} />,
+  //       name: "sign in",
+  //       path: "/sign-in",
+  //       element: <SignIn />,
+  //     },
+  //     {
+  //       icon: <RectangleStackIcon {...icon} />,
+  //       name: "sign up",
+  //       path: "/sign-up",
+  //       element: <SignUp />,
+  //     },
+  //   ],
+  // },
 ];
 
 export default routes;
